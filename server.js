@@ -39,3 +39,8 @@ app.get("/api/notes", function(req, res) {
 app.get("/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "Develop/public/notes.html"));
 });
+
+//Default to index page if nothing specified is found
+app.get("/*", function(req, res) {
+    res.sendFile(path.join(__dirname, "Develop/public/index.html"));
+});
